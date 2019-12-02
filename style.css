@@ -3,3 +3,306 @@
   padding: 0;
 }
 
+html,
+body {
+  width: 95%;
+  font-family: Calibri, sans-serif;
+}
+
+.wrapper {
+  width: 100%;
+  padding: 5%;
+  
+}
+
+.slider-svg-button {
+  display: none;
+}
+
+.block-header {
+  display: flex;
+  width: 100%;
+  padding-bottom: 20px;
+}
+
+.block-header__logo {
+  cursor: pointer;
+ 
+}
+
+.block-header__logo img {
+  border-radius: 100%;
+}
+
+.block-header__logo a {
+  display: flex;
+  width: 100%;
+}
+
+.block-header__nav {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  font-size: 30px;
+  padding-left: 5%;
+}
+
+main {
+  position: relative;
+  width: 100%;
+}
+
+.block-exp-panel {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  border-top: 5px solid #000;
+}
+
+.block-exp-panel__header {
+  font-size: 30px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.block-exp-panel__header span {
+  display: inline-block;
+  -ms-transform: rotate(-90deg);
+  -moz-transform: rotate(-90deg);
+  -webkit-transform: rotate(-90deg);
+  transform: rotate(-90deg); 
+  padding-bottom: 20px;
+  cursor: pointer;
+}
+
+.block-exp-panel__body {
+  display: none;
+  border-top: 2px solid #000;
+  font: 600 20px Calibri;
+} 
+
+.block-exp-panel__body div {
+   padding-bottom: 10px;
+} 
+
+.block-slider {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  border-top: 5px solid #000;
+}
+
+.block-slider__header {
+  font-size: 30px;
+  padding: 15px 0;
+}  
+
+.slider-wrap {
+  position: relative;
+  width: 100%;
+  height: 400px;
+  border: 2px solid #000;
+}
+
+.slider {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: 100%;
+  height: 100%;
+  transform: translate(-50%, -50%);
+}
+
+.slider__item-cont {
+  position: relative;
+  width: 100%;
+  overflow: hidden;
+}
+
+.slider__item-cont__item {
+  display: none;
+  position: relative;
+  margin: 0 auto;
+  animation: 0.5s ease-in-out;
+}
+
+.active,
+.next {
+  display: block;
+}
+
+.next {
+  position: absolute;
+  top: 0;
+  width: 100%;
+}
+
+.slider__item-cont__item__descr {
+  display: flex;
+  margin: 30px 15%;
+  font-size: 25px;
+  border: 2px solid #000;
+  justify-content: space-between;
+}
+ 
+.slider__item-cont__item__descr__proj-name {
+  padding: 10px 0 10px 40px;
+}
+
+.descr__proj-name__list li {
+  display; inline-block;
+  font: 400 20px Calibri;
+  margin-left: 20px;
+}
+
+.slider__item-cont__item__descr__block {
+  display: flex;
+  font-size: 20px;
+  width: 80%;
+  border: 1px solid #000;
+  align-items: center;
+  padding-left: 10px;
+  margin-top: 75px;
+}
+
+.slider__item-cont__item__descr__block p:nth-child(1) {
+  width: 80%;
+}
+
+.slider__item-cont__item__descr__block p:nth-child(2) {
+  font-size: 50px;
+}
+
+.slider__control {
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  width: 15%;
+  cursor: pointer;
+}
+
+.block-slider__control.left {
+  left: 0;
+  right: auto;
+}
+
+.slider__control.right {
+  left: auto;
+  right: 0;
+}
+
+.slider__control__arrow {
+  display: inline-block;
+  position: absolute;
+  top: 50%;
+  transform: translate(50%, -50%);
+  font-size: 84px;
+}
+
+.slider__control__arrow.right {
+  right: 50%;
+}
+
+.to-left {
+  animation-name: left;
+}
+
+.to-right {
+  animation-name: right;
+  animation-direction: reverse;
+}
+
+.from-left {
+  animation-name: left;
+  animation-direction: reverse;
+}
+
+.from-right {
+  animation-name: right;
+}
+
+@keyframes left {
+  from {
+    left: 0;
+  }
+  to {
+    left: -100%;
+  }
+}
+
+@keyframes right {
+  from {
+    left: 100%;
+  }
+  to {
+    left: 0;
+  }  
+}
+
+@media (max-width: 960px) {
+
+  .slider__item-cont__item__descr {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .block-header {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .block-header__nav {
+    align-items: center;
+  }
+
+  .slider-wrap {
+    height: 560px;
+  }
+  
+  .slider__item-cont__item__descr__block{
+    margin-top: 0;
+  }   
+}
+
+@media (max-width: 640px) {
+  .slider__control__arrow {
+    display: none;    
+  }
+
+  .slider__item-cont__item {
+    border: 2px solid #000;
+    margin-top: 33px;
+  }
+
+  .slider__item-cont__item__descr__proj-name {
+    padding-left: 0;
+  }
+
+  .descr__proj-name__list {
+    display: none;
+  }
+  
+  .slider__item-cont__item__descr__block {
+    display: none;
+  }
+  
+  .slider__item-cont__item__descr {
+    border: 0;
+  }
+
+  .slider-wrap {
+    border: 0;
+  }
+
+  .slider-svg-button {
+    display: inline-block;
+    width: 30%;
+    margin-left: 85%;
+  }
+
+   .slider-wrap {
+    height: 560px;
+  }
+
+}
