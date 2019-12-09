@@ -1472,7 +1472,7 @@ ul {
   background-color: #fdcb7a;
 }
 
-@media (max-width: 1080px) and (min-width: 375px) { 
+@media (max-width: 1080px) { 
   html,
   body {
     font: 200 15px Futura book;
