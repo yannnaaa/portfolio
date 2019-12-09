@@ -138,11 +138,6 @@ const swipedetect = () => {
         startX = touchObj.pageX;
         startY = touchObj.pageY;
         startTime =  new Date().getTime();
-        e.preventDefault();
-    });
-
-    surface.addEventListener('touchmove', function (e) {
-        e.preventDefault();
     });
 
     surface.addEventListener('touchend', function (e) {
@@ -164,8 +159,6 @@ const swipedetect = () => {
                 }
             }
         }
-
-        e.preventDefault();
     });
 }
 
